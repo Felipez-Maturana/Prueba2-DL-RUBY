@@ -1,0 +1,4 @@
+El alumno Juan posee un promedio = 3
+El alumno Felipe posee un promedio = 4
+El alumno Javiera posee un promedio = 7
+El alumno Gonzalo posee un promedio = 10

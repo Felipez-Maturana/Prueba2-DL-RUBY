@@ -80,24 +80,26 @@ def aprobados(notaAprobar =5)
 		end
 		i+=1
 	end
-	puts "Los alumnos aprobados son: "
-	alumnosAprobados.each do |alum|
-		puts "#{alum}"		
+
+	if(alumnosAprobados.length>0 )
+		puts "Los alumnos aprobados son: "
+		alumnosAprobados.each do |alum|
+			puts "#{alum}"		
+		end
+	else
+		puts "Lamentablemente, no existen alumnos aprobados"
 	end
 
 end
 
 
-#cantidadInasistencias()
 
-
-# aprobados()
 
 opcion =0
 while(opcion != 4)
 	puts "##########################MENU##########################"
 	puts "1: Generar archivo con nombres y promedio"
-	puts "2: Contar cantidad de inasistencias de un alumno"
+	puts "2: Contar cantidad de inasistencias"
 	puts "3: Alumnos que aprobaron"
 	puts "4: Salir"
 	opcion = gets.chomp.to_i
@@ -113,11 +115,11 @@ while(opcion != 4)
 		when 3
 			puts "Ingrese la nota mInima para aprobar (entre 0 y 10)"
 			notaMin=gets.chomp
-			if(!notaMin=="")
-				aprobados(notaMin.to_i)
-			else
-				# por defecto
+			if(notaMin.eql?"")
+				puts "por defecto"
 				aprobados()
+			else
+				aprobados(notaMin.to_i)
 			end
 		when 4
 			puts"Cerrando Sesión, el programa ha finalizado correctamente."
@@ -125,5 +127,6 @@ while(opcion != 4)
 	else
 		puts "opción inválida, por favor, intente nuevamente."
 	end
+	puts "#########################################################"
 
 end
